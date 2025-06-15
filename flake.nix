@@ -1,54 +1,32 @@
 {
-  description = "A nixvim configuration";
+  description = "nixvim custom config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixvim.url = "github:nix-community/nixvim";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { self, flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-
-      imports = [
-        # Import nixvim's flake-parts module;
-        # Adds `flake.nixvimModules` and `perSystem.nixvimConfigurations`
-        inputs.nixvim.flakeModules.default
-      ];
-
-      nixvim = {
-        # Automatically install corresponding packages for each nixvimConfiguration
-        # Lets you run `nix run .#<name>`, or simply `nix run` if you have a default
-        packages.enable = true;
-        # Automatically install checks for each nixvimConfiguration
-        # Run `nix flake check` to verify that your config is not broken
-        checks.enable = true;
-      };
-
-      # You can define your reusable Nixvim modules here
-      flake.nixvimModules = {
-        default = ./config;
-      };
-
-      perSystem =
-        { system, ... }:
-        {
-          # You can define actual Nixvim configurations here
-          nixvimConfigurations = {
-            default = inputs.nixvim.lib.evalNixvim {
-              inherit system;
-              modules = [
-                self.nixvimModules.default
-              ];
-            };
-          };
-        };
+  outputs = {self, nixvim, flake-utils, ...}:
+  flake-utils.lib.eachDefaultSystem (system: {
+    packages.default = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+      inherit system;
+      module = ./config;
     };
+
+    apps.default = {
+      type = "app";
+      program = "${self.packages.${system}.default}/bin/nvim";
+    };
+  }) // {
+    nixosModules.default = {config, lib, pkgs, ...}: {
+      options.programs.mvim = {
+        enable = lib.mkEnableOption "Enable nixvim editor";
+      };
+
+      environment.systemPackages = lib.mkIf config.programs.mvim.enable [
+	  self.packages.${pkgs.system}.default
+      ];
+    };
+  };
 }
+

@@ -1,5 +1,4 @@
-{
-  enable = true; 
+{ pkgs, ... } : {
   plugins = import ./plugins.nix;
   keymaps = import ./keymaps.nix;
 
