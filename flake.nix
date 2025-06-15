@@ -9,12 +9,12 @@
 
   outputs = {self, nixpkgs, nixvim, ...} : {
     nixosModules.default = {config, lib, pkgs, ...}: {
-      inherit nixvim;
       options.programs.myvim = {
         enable = lib.mkEnableOption "Enable my config of nixvim";
       };
 
       config = lib.mkIf config.programs.myvim.enable {
+        inherit nixvim;
         environment.systemPackages = [
           (nixvim.legacyPackages.${pkgs.system}.makeNixvim {
             inherit pkgs;
