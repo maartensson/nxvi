@@ -15,7 +15,7 @@
 
     apps.default = {
       type = "app";
-      program = "${self.packages.${system}.default}/bin/nvim";
+      program = "${self.packages.${system}.default}/bin/vi";
     };
   }) // {
     nixosModules.default = {config, lib, pkgs, ...}: {
