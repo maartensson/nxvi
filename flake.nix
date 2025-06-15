@@ -23,9 +23,11 @@
         enable = lib.mkEnableOption "Enable nixvim editor";
       };
 
-      environment.systemPackages = lib.mkIf config.programs.mvim.enable [
-	  self.packages.${pkgs.system}.default
-      ];
+      config = lib.mkIf config.programs.mvim.enable {
+        environment.systemPackages =  [
+            self.packages.${pkgs.system}.default
+        ];
+      };
     };
   };
 }
