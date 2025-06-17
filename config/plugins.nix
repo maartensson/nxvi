@@ -75,9 +75,9 @@
       clangd.enable = true;
       rust_analyzer = true;
       marksman.enable = true;
-      kotlin_language_server = true;
-      java_language_server = true;
-      postgres_lsp.enable = true;
+      kotlin_language_server.enable = true;
+      java_language_server.enable = true;
+      postgres_lsp.enable.enable = true;
       tailwindcss.enable = true;
       ts_ls.enable = true;
     };
