@@ -28,11 +28,14 @@
       close.key = "<C-w>";
     };
   };
+
   web-devicons.enable = true;
 
   neo-tree.enable = true;
   nix.enable = true;
   markdown-preview.enable = true;
+  tailwind-tools.enable = true;
+  typescript-tool.enable = true;
   lualine.enable = true;
   gitsigns.enable = true;
   nvim-autopairs.enable = true;
@@ -67,8 +70,16 @@
       gopls.enable = true;
       nil_ls.enable = true;
       html.enable = true;
+      htmlx.enable = true;
       cssls.enable = true;
       clangd.enable = true;
+      rust_analyzer = true;
+      marksman.enable = true;
+      kotlin_language_server = true;
+      java_language_server = true;
+      postgres_lsp.enable = true;
+      tailwindcss.enable = true;
+      ts_ls.enable = true;
     };
   };
 
