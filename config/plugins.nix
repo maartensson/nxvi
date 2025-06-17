@@ -73,7 +73,6 @@
       htmx.enable = true;
       cssls.enable = true;
       clangd.enable = true;
-      rust_analyzer.enable = true;
       marksman.enable = true;
       kotlin_language_server.enable = true;
       java_language_server.enable = true;
