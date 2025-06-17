@@ -3,11 +3,10 @@
 
   inputs = {
     nixvim.url = "github:nix-community/nixvim";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {nixvim, flake-utils, ...}:
-  flake-utils.lib.eachDefaultSystem (system: {
+  outputs = {nixvim, ...}:
+  {
     nixosModules.default = {config, lib, pkgs, ...}: {
       options.programs.nxvi = {
         enable = lib.mkEnableOption "Enable nixvim editor";
@@ -26,8 +25,8 @@
 
       config = lib.mkIf config.programs.nxvi.enable {
         environment.systemPackages =  [
-          (nixvim.legacyPackages.${system}.makeNixvimWithModule {
-            inherit system;
+          (nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+            inherit (pkgs) system;
             module = [
               ./base_config
             ]
@@ -44,6 +43,6 @@
         ];
       };
     };
-  });
+  };
 }
 
