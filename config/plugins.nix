@@ -35,7 +35,7 @@
   nix.enable = true;
   markdown-preview.enable = true;
   tailwind-tools.enable = true;
-  typescript-tool.enable = true;
+  typescript-tools.enable = true;
   lualine.enable = true;
   gitsigns.enable = true;
   nvim-autopairs.enable = true;
