@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {self, nixvim, flake-utils, ...}:
+  outputs = {nixvim, flake-utils, ...}:
   flake-utils.lib.eachDefaultSystem (system: {
     nixosModules.default = {config, lib, pkgs, ...}: {
       options.programs.nxvi = {
@@ -42,11 +42,6 @@
             ++ lib.optional config.programs.nxvi.environments.database.enable ./environments/database;
           })
         ];
-
-        apps.default = {
-          type = "app";
-          program = "${self.packages.${system}.default}/bin/vi";
-        };
       };
     };
   });
