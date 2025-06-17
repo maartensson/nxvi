@@ -70,7 +70,7 @@
       gopls.enable = true;
       nil_ls.enable = true;
       html.enable = true;
-      htmlx.enable = true;
+      htmx.enable = true;
       cssls.enable = true;
       clangd.enable = true;
       rust_analyzer.enable = true;
