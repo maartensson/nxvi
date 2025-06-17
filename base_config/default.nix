@@ -3,7 +3,6 @@
   keymaps = import ./keymaps.nix;
 
   extraPlugins = with pkgs.vimPlugins; [ 
-    vim-go 
     lazygit-nvim
     aerial-nvim
   ];
@@ -34,7 +33,6 @@
 
   colorschemes.dracula.enable = true;
 
-
   opts.completeopt = ["menu" "menuone" "noselect"];
 
   extraConfigLua = ''
@@ -45,26 +43,5 @@
     end,
     })
     vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
-
-  '';
-
-  extraConfigVim = ''
-    augroup PythonMapping
-    autocmd FileType python nnoremap <buffer> <CR> :w<CR>:!python %<CR>
-    augroup END
-
-    augroup GolangMappings
-    autocmd FileType go nnoremap <buffer> <CR>r :w<CR>:GoRun<CR>
-    autocmd FileType go nnoremap <buffer> <CR>t :w<CR>:GoTest<CR>
-    autocmd FileType go nnoremap <buffer> <CR>c :w<CR>:GoCoverage<CR>
-    autocmd FileType go nnoremap <buffer> <leader>jj :w<CR>:GoAddTags<CR>
-    augroup END
-
-    augroup PlantUMLMappings
-    autocmd FileType plantuml nnoremap <buffer> <CR>i :w<CR>:!plantuml %<CR>
-    autocmd FileType plantuml nnoremap <buffer> <CR>di :w<CR>:!plantuml -darkmode %<CR>
-    autocmd FileType plantuml nnoremap <buffer> <CR>p :w<CR>:!plantuml -tpdf %<CR>
-    autocmd FileType plantuml nnoremap <buffer> <CR>dp :w<CR>:!plantuml -darkmode -tpdf %<CR>
-    augroup END
   '';
 }

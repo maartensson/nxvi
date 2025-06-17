@@ -1,0 +1,3 @@
+{
+  plantuml-syntax.enable = true;
+}

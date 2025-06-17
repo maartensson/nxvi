@@ -1,8 +1,4 @@
 {
-  plantuml-syntax.enable = true;
-
-  rustaceanvim.enable = true;
-
   trouble = {
     enable = true;
     settings = {
@@ -33,15 +29,13 @@
 
   neo-tree.enable = true;
   nix.enable = true;
+
   markdown-preview.enable = true;
-  tailwind-tools.enable = true;
-  typescript-tools.enable = true;
   lualine.enable = true;
   gitsigns.enable = true;
   nvim-autopairs.enable = true;
   vim-surround.enable = true;
   commentary.enable = true;
-  haskell-scope-highlighting.enable = true;
 
   lsp = {
     enable = true;
@@ -61,24 +55,10 @@
       };
     };
     servers = {
-      hls = {
-        enable = true;
-        installGhc = true;
-      };
       bashls.enable = true;
       jsonls.enable = true;
-      gopls.enable = true;
       nil_ls.enable = true;
-      html.enable = true;
-      htmx.enable = true;
-      cssls.enable = true;
-      clangd.enable = true;
       marksman.enable = true;
-      kotlin_language_server.enable = true;
-      java_language_server.enable = true;
-      postgres_lsp.enable = true;
-      tailwindcss.enable = true;
-      ts_ls.enable = true;
     };
   };
 
