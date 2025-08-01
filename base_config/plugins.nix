@@ -62,47 +62,13 @@
     };
   };
 
-  lspkind = {
-    enable = true;
-    cmp = {
-      enable = true;
-      menu = {
-        nvim_lsp = "[LSP]";
-        nvim_lua = "[api]";
-        path = "[path]";
-        luasnip = "[snip]";
-        buffer = "[buffer]";
-        neorg = "[neorg]";
-      };
-    };
-  };
-
   lsp-lines.enable = true;
 
   treesitter.enable = true;
 
   treesitter-context.enable = true;
 
-  cmp = {
+  blink-cmp = {
     enable = true;
-    autoEnableSources = true;
-    settings = {
-      snippet.expand = ''
-function(args)
-  require('luasnip').lsp_expand(args.body)
-end
-'';
-      mapping = {
-        "<C-n>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-        "<C-p>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-        "<CR>" = "cmp.mapping.confirm({ select = true })";
-      };
-      sources = [
-        {name = "nvim_lsp";}
-        {name = "luasnip";}
-        {name = "path";}
-        {name = "buffer";}
-      ];
-    };
   };
 }
