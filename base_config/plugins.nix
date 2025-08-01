@@ -68,6 +68,8 @@
 
   treesitter-context.enable = true;
 
+  blink-ripgrep.enable = true;
+  blink-cmp-dictionary.enable = true;
   blink-cmp = {
     enable = true;
     settings = {
