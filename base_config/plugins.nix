@@ -79,6 +79,9 @@
       signature = {
         enabled = true;
       };
+      keymap = {
+        preset = "enter";
+      };
       sources = {
         default = [
           "lsp"
