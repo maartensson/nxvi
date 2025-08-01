@@ -70,6 +70,7 @@
 
   blink-ripgrep.enable = true;
   blink-cmp-dictionary.enable = true;
+  blink-cmp-copilot.enable = true;
   blink-cmp = {
     enable = true;
     settings = {
@@ -89,6 +90,12 @@
       };
       sources = {
         providers = {
+          copilot = {
+            async = true;
+            module = "blink-cmp-copilot";
+            name = "copilot";
+            score_offset = 100;
+          };
           dictionary = {
             module = "blink-cmp-dictionary";
             name = "Dict";
@@ -125,6 +132,7 @@
           "buffer"
           "ripgrep"
           "dictionary"
+          "copilot"
         ];
       };
     };
