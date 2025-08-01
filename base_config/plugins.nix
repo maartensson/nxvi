@@ -83,9 +83,8 @@
         default = [
           "lsp"
           "path"
+          "snippets"
           "buffer"
-          "dictionary"
-          "ripgrep"
         ];
         providers = {
           dictionary = {
