@@ -76,7 +76,7 @@
           auto_show = true;
         };
         ghost_text = {
-          enabled = true;
+          enabled = true; # maybe disable menu ? 
         };
       };
       signature = {
@@ -86,12 +86,6 @@
         preset = "enter";
       };
       sources = {
-        default = [
-          "lsp"
-          "path"
-          "snippets"
-          "buffer"
-        ];
         providers = {
           dictionary = {
             module = "blink-cmp-dictionary";
@@ -122,6 +116,13 @@
             };
           };
         };
+        default = [
+          "lsp"
+          "path"
+          "snippets"
+          "buffer"
+          "ripgrep"
+        ];
       };
     };
   };
