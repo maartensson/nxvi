@@ -3,7 +3,6 @@
   keymaps = import ./keymaps.nix;
 
   extraPlugins = with pkgs.vimPlugins; [ 
-    wordnet # for blink-cmp-dictionary
     lazygit-nvim
     aerial-nvim
   ];
