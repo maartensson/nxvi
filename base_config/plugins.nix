@@ -124,6 +124,7 @@
           "snippets"
           "buffer"
           "ripgrep"
+          "dictionary"
         ];
       };
     };
