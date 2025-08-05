@@ -90,58 +90,11 @@
         preset = "enter";
       };
       sources = {
-        providers = {
-          spell = {
-            module = "blink-cmp-spell";
-            name = "Spell";
-            score_offset = 100;
-            opts = {
-            };
-          };
-          copilot = {
-            async = true;
-            module = "blink-cmp-copilot";
-            name = "copilot";
-            score_offset = 100;
-          };
-          dictionary = {
-            module = "blink-cmp-dictionary";
-            name = "Dict";
-            score_offset = 100;
-            min_keyword_length = 3;
-            # Optional configurations
-            opts = {
-            };
-          };
-          ripgrep = {
-            async = true;
-            module = "blink-ripgrep";
-            name = "Ripgrep";
-            score_offset = 100;
-            opts = {
-              prefix_min_len = 3;
-              context_size = 5;
-              max_filesize = "1M";
-              project_root_marker = ".git";
-              project_root_fallback = true;
-              search_casing = "--ignore-case";
-              additional_rg_options = {};
-              fallback_to_regex_highlighting = true;
-              ignore_paths = {};
-              additional_paths = {};
-              debug = false;
-            };
-          };
-        };
         default = [
           "lsp"
           "path"
           "snippets"
           "buffer"
-          "ripgrep"
-          "dictionary"
-          "copilot"
-          "spell"
         ];
       };
     };
