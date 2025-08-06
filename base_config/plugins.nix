@@ -1,5 +1,4 @@
 {
-  neorg.enable = true;
   trouble = {
     enable = true;
     settings = {
