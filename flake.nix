@@ -20,6 +20,7 @@
           plantuml.enable = lib.mkEnableOption "Enable plantuml environment";
           java.enable = lib.mkEnableOption "Enable java environment";
           database.enable = lib.mkEnableOption "Enable database environment";
+          dotnet.enable = lib.mkEnableOption "Enable dotnet environment";
         };
       };
 
@@ -38,7 +39,8 @@
             ++ lib.optional config.programs.nxvi.environments.web.enable ./environments/webdev
             ++ lib.optional config.programs.nxvi.environments.plantuml.enable ./environments/plantuml
             ++ lib.optional config.programs.nxvi.environments.java.enable ./environments/java
-            ++ lib.optional config.programs.nxvi.environments.database.enable ./environments/database;
+            ++ lib.optional config.programs.nxvi.environments.database.enable ./environments/database
+            ++ lib.optional config.programs.nxvi.environments.dotnet.enable ./environments/dotnet;
           })
         ];
       };
