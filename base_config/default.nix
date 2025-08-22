@@ -29,6 +29,8 @@
     number = true;
     relativenumber = true;
     shiftwidth = 2;
+
+    clipboard = "unnamedplus";
   };
 
   colorschemes.dracula.enable = true;
