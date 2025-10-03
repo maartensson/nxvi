@@ -12,23 +12,19 @@
         vim.cmd("silent! %!rustfmt --emit=stdout")
       end,
     })
-    vim.api.nvim_create_autocmd("FileType", {
+    vim.api.nvim_create_autocmd("filetype", {
       pattern = "rust",
       callback = function()
         vim.keymap.set('n', '<CR>', function()
-          -- save the current file
           vim.cmd('w')
 
-          -- check for Cargo.toml in current directory or parent directories
           local cargo = vim.fn.findfile("Cargo.toml", ".;")
           if cargo ~= "" then
-            -- Cargo project: run cargo run
-            vim.cmd('!' .. "cargo run")
+            vim.cmd('silent! !cargo run')
           else
-            -- Single file: compile and run with rustc
             local file = vim.fn.expand('%')
             local output = vim.fn.expand('%:r')
-            vim.cmd('!' .. "rustc " .. file .. " -o " .. output .. " && ./" .. output)
+            vim.cmd('silent! !rustc ' .. file .. ' -o ' .. output .. ' && ./' .. output)
           end
         end, { buffer = true, noremap = true, silent = false })
       end,
