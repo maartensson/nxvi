@@ -16,20 +16,21 @@
       pattern = "rust",
       callback = function()
         vim.keymap.set('n', '<CR>', function()
-          vim.cmd('w')  -- save file
+          -- save the current file
+          vim.cmd('w')
 
-          -- check for Cargo.toml in current or parent directories
-          local cargo_toml = vim.fn.findfile("Cargo.toml", ".;")
-          if cargo_toml ~= "" then
-            -- Cargo project: run with cargo in a terminal split
-            vim.cmd('vsplit | terminal cargo run')
+          -- check for Cargo.toml in current directory or parent directories
+          local cargo = vim.fn.findfile("Cargo.toml", ".;")
+          if cargo ~= "" then
+            -- Cargo project: run cargo run
+            vim.cmd('!' .. "cargo run")
           else
-            -- Single file: compile and run
+            -- Single file: compile and run with rustc
             local file = vim.fn.expand('%')
             local output = vim.fn.expand('%:r')
-            vim.cmd('vsplit | terminal rustc ' .. file .. ' -o ' .. output .. ' && ./' .. output)
+            vim.cmd('!' .. "rustc " .. file .. " -o " .. output .. " && ./" .. output)
           end
-        end, { buffer = true, noremap = true, silent = true })
+        end, { buffer = true, noremap = true, silent = false })
       end,
     })
   '';
