@@ -1,5 +1,5 @@
 {
-  rustaceanvim.enable = true;
+  #rustaceanvim.enable = true;
   lsp = {
     enable = true;
     servers = {
