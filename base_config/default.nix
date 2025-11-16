@@ -5,7 +5,6 @@
   extraPlugins = with pkgs.vimPlugins; [ 
     lazygit-nvim
     aerial-nvim
-    github-nvim-theme
   ];
 
 
@@ -33,6 +32,15 @@
 
     clipboard = "unnamedplus";
 
+    colorscheme = {
+      rose-pine = {
+        enable = true;
+        settings = {
+          variant = "dawn";
+        };
+      };
+    };
+
     foldmethod = "expr";
     foldexpr = "nvim_treesitter#foldexpr()";
     foldtext = "v:lua.vim.treesitter.foldtext()";
@@ -44,7 +52,5 @@
 
   extraConfigLua = ''
     require("aerial").setup({})
-    require('github-theme').setup({})
-    vim.cmd('colorscheme github_light')
   '';
 }
