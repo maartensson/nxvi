@@ -35,8 +35,8 @@
     foldmethod = "expr";
     foldexpr = "nvim_treesitter#foldexpr()";
     foldtext = "v:lua.vim.treesitter.foldtext()";
-    foldlevel = 20;
-    foldlevelstart = 1;
+    foldlevel = 99;
+    foldlevelstart = 99;
   };
 
   colorschemes.dracula.enable = true;
@@ -44,5 +44,6 @@
   opts.completeopt = ["menu" "menuone" "noselect"];
 
   extraConfigLua = ''
+    require("aerial").setup({})
   '';
 }
