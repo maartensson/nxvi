@@ -32,15 +32,6 @@
 
     clipboard = "unnamedplus";
 
-    colorscheme = {
-      rose-pine = {
-        enable = true;
-        settings = {
-          variant = "dawn";
-        };
-      };
-    };
-
     foldmethod = "expr";
     foldexpr = "nvim_treesitter#foldexpr()";
     foldtext = "v:lua.vim.treesitter.foldtext()";
@@ -49,6 +40,16 @@
   };
 
   opts.completeopt = ["menu" "menuone" "noselect"];
+
+
+  colorscheme = {
+    rose-pine = {
+      enable = true;
+      settings = {
+        variant = "dawn";
+      };
+    };
+  };
 
   extraConfigLua = ''
     require("aerial").setup({})
