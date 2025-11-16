@@ -64,7 +64,23 @@
 
   lsp-lines.enable = true;
 
-  treesitter.enable = true;
+  treesitter = {
+    enable = true;
+    autoLoad = true;
+    folding = true;
+    settings = {
+      auto_install = true;
+      ensure_installed = "all";
+      highlight = {
+        additional_vim_regex_highlighting = true;
+        custom_captures = { };
+        enable = true;
+      };
+      indent = {
+        enable = true;
+      };
+    };
+  };
 
   treesitter-context.enable = true;
 
