@@ -66,6 +66,12 @@
 
   origami = {
     enable = true;
+    settings = {
+      autoFold = {
+        enabled = true;
+        kinds = [ "comment"  "imports" ];
+      };
+    };
   };
   treesitter = {
     enable = true;
