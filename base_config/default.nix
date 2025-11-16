@@ -34,8 +34,9 @@
 
     foldmethod = "expr";
     foldexpr = "nvim_treesitter#foldexpr()";
+    foldtext = "v:lua.vim.treesitter.foldtext()";
     foldlevel = 20;
-    foldlevelstart = 20;
+    foldlevelstart = 1;
   };
 
   colorschemes.dracula.enable = true;
@@ -43,12 +44,5 @@
   opts.completeopt = ["menu" "menuone" "noselect"];
 
   extraConfigLua = ''
-    require("aerial").setup({
-    on_attach = function(bufnr)
-    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
-    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
-    end,
-    })
-    vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
   '';
 }

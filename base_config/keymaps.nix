@@ -53,12 +53,7 @@
   }
   {
     mode = "n";
-    key = "[";
-    action = "zc";
-  }
-  {
-    mode = "n";
-    key = "]";
-    action = "zo";
+    key = "<leader>a";
+    action = ":AerialToggle!<CR>";
   }
 ]

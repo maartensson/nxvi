@@ -79,6 +79,9 @@
     };
   };
 
+  treesitter-context.enable = true;
+  treesitter-textobjects.enable = true;
+
   orgmode.enable = true;
 
   blink-ripgrep.enable = true;
