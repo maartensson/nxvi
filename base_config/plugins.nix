@@ -67,6 +67,7 @@
   origami.enable = true;
   treesitter = {
     enable = true;
+    folding = true;
     settings = {
       auto_install = true;
       highlight = {
