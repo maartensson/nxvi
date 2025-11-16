@@ -42,7 +42,7 @@
   opts.completeopt = ["menu" "menuone" "noselect"];
 
 
-  colorscheme = {
+  colorschemes = {
     rose-pine = {
       enable = true;
       settings = {
