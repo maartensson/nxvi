@@ -9,6 +9,7 @@
     autocmd FileType go nnoremap <buffer> <CR>t :w<CR>:GoTest<CR>
     autocmd FileType go nnoremap <buffer> <CR>c :w<CR>:GoCoverage<CR>
     autocmd FileType go nnoremap <buffer> <leader>jj :w<CR>:GoAddTags<CR>
+    autocmd FileType templ nnoremap <buffer> <CR> :w<CR>:!templ generate -f %<CR>
     augroup END
   '';
 }
