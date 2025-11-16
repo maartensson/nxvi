@@ -64,15 +64,7 @@
 
   lsp-lines.enable = true;
 
-  origami = {
-    enable = true;
-    settings = {
-      autoFold = {
-        enabled = true;
-        kinds = [ "comment"  "imports" ];
-      };
-    };
-  };
+  origami.enable = true;
   treesitter = {
     enable = true;
     settings = {
