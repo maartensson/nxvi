@@ -5,6 +5,18 @@
     vim-go 
   ];
 
+  extraConfigLua = ''
+    -- Go indentation
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "go",
+      callback = function()
+        vim.opt_local.expandtab = false
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.tabstop = 4
+      end,
+    })
+  '';
+
   extraConfigVim = ''
     augroup GolangMappings
     autocmd FileType go nnoremap <buffer> <CR>r :w<CR>:GoRun<CR>
@@ -15,13 +27,4 @@
     autocmd FileType templ nnoremap <buffer> <CR> :w<CR>:!templ generate -f %<CR>
     augroup END
   '';
-
-  filetype = {
-    go = {
-      expandtab = false;
-      shiftwidth = 4;
-      tabstop = 4;
-    };
-  };
-
 }
