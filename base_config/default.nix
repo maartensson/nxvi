@@ -31,6 +31,11 @@
     shiftwidth = 2;
 
     clipboard = "unnamedplus";
+
+    foldmethod = "expr";
+    foldexpr = "nvim_treesitter#foldexpr()";
+    foldlevel = 20;
+    foldlevelstart = 20;
   };
 
   colorschemes.dracula.enable = true;

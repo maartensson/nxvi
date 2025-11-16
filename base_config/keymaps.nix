@@ -34,6 +34,7 @@
       silent = true;
     };
   }
+
   {
     key = "<leader>n";
     action = ":Neotree action=focus reveal toggle<CR>";
@@ -45,5 +46,19 @@
   {
     key = "<leader>tt";
     action = ":TroubleToggle<CR>";
+  }
+  {
+    key = "<leader><leader>";
+    action = "za";
+  }
+  {
+    mode = "n";
+    key = "[";
+    action = "zc";
+  }
+  {
+    mode = "n";
+    key = "]";
+    action = "zo";
   }
 ]

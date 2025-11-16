@@ -66,13 +66,11 @@
 
   treesitter = {
     enable = true;
-    #folding = true;
+    folding = true;
     settings = {
       auto_install = true;
-      #ensure_installed = "all";
       highlight = {
         additional_vim_regex_highlighting = true;
-        #custom_captures = { };
         enable = true;
       };
       indent = {
@@ -81,15 +79,9 @@
     };
   };
 
-  treesitter-context.enable = true;
-  treesitter-textobjects.enable = true;
-
   orgmode.enable = true;
 
   blink-ripgrep.enable = true;
-  blink-cmp-dictionary.enable = true;
-  blink-cmp-copilot.enable = true;
-  blink-cmp-spell.enable = true;
   blink-cmp = {
     enable = true;
     settings = {
