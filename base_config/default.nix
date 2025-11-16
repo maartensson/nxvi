@@ -39,11 +39,14 @@
     foldlevelstart = 99;
   };
 
-  colorschemes.dracula.enable = true;
+  colorschemes.github-theme = {
+    enable = true;
+  };
 
   opts.completeopt = ["menu" "menuone" "noselect"];
 
   extraConfigLua = ''
     require("aerial").setup({})
+    vim.cmd('colorscheme github_light')
   '';
 }

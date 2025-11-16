@@ -1,8 +1,10 @@
 { pkgs, ... } : {
   plugins = import ./plugins.nix;
+
   extraPlugins = with pkgs.vimPlugins; [ 
     vim-go 
   ];
+
   extraConfigVim = ''
     augroup GolangMappings
     autocmd FileType go nnoremap <buffer> <CR>r :w<CR>:GoRun<CR>
@@ -13,4 +15,13 @@
     autocmd FileType templ nnoremap <buffer> <CR> :w<CR>:!templ generate -f %<CR>
     augroup END
   '';
+
+  filetype = {
+    go = {
+      expandtab = false;
+      shiftwidth = 4;
+      tabstop = 4;
+    };
+  };
+
 }
