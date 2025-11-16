@@ -5,6 +5,7 @@
   extraPlugins = with pkgs.vimPlugins; [ 
     lazygit-nvim
     aerial-nvim
+    github-nvim-theme
   ];
 
 
@@ -39,14 +40,11 @@
     foldlevelstart = 99;
   };
 
-  colorschemes.github-theme = {
-    enable = true;
-  };
-
   opts.completeopt = ["menu" "menuone" "noselect"];
 
   extraConfigLua = ''
     require("aerial").setup({})
+    require('github-theme').setup({})
     vim.cmd('colorscheme github_light')
   '';
 }
