@@ -29,6 +29,7 @@
 
   web-devicons.enable = true;
   lspkind.enable = true;
+  noice.enable = true;
 
   neo-tree.enable = true;
   nix.enable = true;

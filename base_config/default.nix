@@ -19,6 +19,9 @@
   opts = {
     updatetime = 100;
 
+    conceallevel=2;
+    concealcursor="nc";
+
     incsearch = true;
 
     ignorecase = true;
