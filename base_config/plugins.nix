@@ -89,7 +89,7 @@
   orgmode.enable = true;
 
   blink-ripgrep.enable = true;
-  blink-indent.enable = true;
+  blink-indent.enable = false;
   blink-cmp = {
     enable = true;
     settings = {
