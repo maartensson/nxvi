@@ -46,10 +46,10 @@
 
 
   colorschemes = {
-    rose-pine = {
+    catppuccin = {
       enable = true;
       settings = {
-        variant = "dawn";
+        flavor = "mocha";
       };
     };
   };
