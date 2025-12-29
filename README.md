@@ -1,7 +1,32 @@
-# NixVim config
+# My NixVim Configuration
 
-## Todo
+## Installation
 
-- [ ] Modularize plugins and lsp into development categories and make an option to enable 
+```nix
+# flake.nix
+{
+  inputs.nxvi.url = "git+ssh://git@github.com/maartensson/nxvi";
+  outputs = { nxvi, ... } : {
+    nixosConfigurations.<name>.modules = [
+      nxvi.nixosModules.default
+      {
+        programs.nxvi = {
+          enable = true;
+          environments = {
+            golang.enable = true;
+            rust.enable = true;
+            python.enable = true;
+            kotlin.enable = true;
+            plantuml.enable = true;
+            haskell.enable = true;
+            java.enable = true;
+            database.enable = true;
+            dotnet.enable = true;
+          };
+        };
+      }
+    ];  
+  };
+}
+```
 
-test...
