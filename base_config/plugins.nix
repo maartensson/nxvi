@@ -4,7 +4,7 @@
   trouble = {
     enable = true;
     settings = {
-      auto_open = true;
+      diagnostics = { auto_open = true; };
       auto_close = true;
       auto_jump = true;
     };
