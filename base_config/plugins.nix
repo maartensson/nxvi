@@ -65,34 +65,23 @@
     };
   };
 
-  #lsp-lines.enable = true;
-
-  #origami.enable = true;
+  # folding
+  origami.enable = true;
 
   treesitter = {
     enable = true;
     grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
       bash
-      rust
-      go
-      json
-      lua
       make
+      json
       markdown
       nix
       regex
       toml
-      vim
-      vimdoc
       xml
       yaml
     ];
   };
-
-  #treesitter-context.enable = true;
-  #treesitter-textobjects.enable = true;
-
-  #orgmode.enable = true;
 
   blink-ripgrep.enable = true;
   blink-indent.enable = false;

@@ -2,10 +2,14 @@
   description = "nixvim custom config";
 
   inputs = {
-    nixvim.url = "github:nix-community/nixvim";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixvim, ...}:
+  outputs = { nixvim, ... }:
   {
     nixosModules.default = {config, lib, pkgs, ...}: {
       options.programs.nxvi = {
