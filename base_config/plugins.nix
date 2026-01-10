@@ -17,7 +17,7 @@
   telescope = {
     enable = true;
     keymaps = let 
-      open_trouble = ''require("trouble.sources.telescope").open'';
+      open_trouble = ''require("trouble.sources.telescope").open()'';
     in {
       "<leader>fg" = "live_grep";
       "<leader>ff" = "find_files";
