@@ -43,7 +43,7 @@
     action = ":BufferClose<CR>";
   }
   {
-    key = "<leader>pp";
+    key = "<leader>p";
     action = ":Trouble diagnostics toggle<CR>";
   }
   {
