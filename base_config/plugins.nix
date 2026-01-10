@@ -4,7 +4,9 @@
   trouble = {
     enable = true;
     settings = {
-      auto_open = false;
+      auto_open = true;
+      auto_close = true;
+      auto_jump = true;
     };
   };
 
@@ -16,14 +18,11 @@
   # https://github.com/nvim-telescope/telescope.nvim
   telescope = {
     enable = true;
-    keymaps = let 
-      open_trouble = ''require("trouble.sources.telescope").open()'';
-    in {
+    keymaps = {
       "<leader>fg" = "live_grep";
       "<leader>ff" = "find_files";
       "<leader>fb" = "buffers";
       "<leader>fx" = "treesitter";
-      "<leader>p" = open_trouble;
     };
   };
 
