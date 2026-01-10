@@ -43,8 +43,8 @@
     action = ":BufferClose<CR>";
   }
   {
-    key = "<leader>tt";
-    action = ":TroubleToggle<CR>";
+    key = "<leader>pp";
+    action = ":Trouble diagnostics toggle<CR>";
   }
   {
     mode = "n";

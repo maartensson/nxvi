@@ -7,6 +7,8 @@
       diagnostics = { auto_open = true; };
       auto_close = true;
       auto_jump = true;
+      follow = true;
+      focus = true;
     };
   };
 
