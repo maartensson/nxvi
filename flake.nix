@@ -1,13 +1,7 @@
 {
   description = "nixvim custom config";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+  inputs.nixvim.url = "github:nix-community/nixvim";
 
   outputs = { nixvim, ... }:
   {
@@ -30,7 +24,7 @@
 
       config = lib.mkIf config.programs.nxvi.enable {
         environment.systemPackages =  [
-          (nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+          (nixvim.legacyPackages.${ pkgs.stdenv.hostPlatform.system }.makeNixvimWithModule {
             inherit (pkgs) system;
             module = [
               ./base_config
