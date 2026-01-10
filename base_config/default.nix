@@ -1,5 +1,5 @@
 { pkgs, ... } : {
-  plugins = import ./plugins.nix;
+  plugins = import ./plugins.nix { inherit pkgs; };
   keymaps = import ./keymaps.nix;
 
   extraPlugins = with pkgs.vimPlugins; [ 

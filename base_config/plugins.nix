@@ -1,4 +1,4 @@
-{
+{ pkgs } : {
   trouble = {
     enable = true;
     settings = {
