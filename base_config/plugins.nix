@@ -1,4 +1,6 @@
 { pkgs } : {
+  # Diagnostic
+  # https://github.com/folke/trouble.nvim/
   trouble = {
     enable = true;
     settings = {
@@ -6,18 +8,27 @@
     };
   };
 
+  # Drop down menu
+  # https://github.com/Bekaboo/dropbar.nvim/
   dropbar.enable = true;
 
+  # Search files or code with fzf
+  # https://github.com/nvim-telescope/telescope.nvim
   telescope = {
     enable = true;
-    keymaps = {
+    keymaps = let 
+      open_trouble = ''require("trouble.sources.telescope").open'';
+    in {
       "<leader>fg" = "live_grep";
       "<leader>ff" = "find_files";
       "<leader>fb" = "buffers";
       "<leader>fx" = "treesitter";
+      "<leader>p" = open_trouble;
     };
   };
 
+  # Top bar showing open buffers
+  # https://github.com/romgrk/barbar.nvim/
   barbar = {
     enable = true;
     keymaps = {
