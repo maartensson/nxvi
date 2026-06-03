@@ -44,16 +44,6 @@
 
   opts.completeopt = ["menu" "menuone" "noselect"];
 
-
-  colorschemes = {
-    catppuccin = {
-      enable = true;
-      settings = {
-        flavor = "mocha";
-      };
-    };
-  };
-
   extraConfigLua = ''
     require("aerial").setup({})
   '';
