@@ -46,11 +46,11 @@
 
 
   colorschemes = {
-    catppuccin = {
+    rose-pine = {
       enable = true;
       settings = {
-        dark = "mocha";
-        light = "latte";
+        dark = "moon";
+        light = "dawn";
       };
     };
   };
