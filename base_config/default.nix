@@ -49,8 +49,7 @@
     rose-pine = {
       enable = true;
       settings = {
-        dark = "moon";
-        light = "dawn";
+        variant = "auto";
       };
     };
   };
