@@ -24,6 +24,11 @@
 
       config = lib.mkIf config.programs.nxvi.enable {
         environment.systemPackages =  [
+          # Dependencies
+          pkgs.ripgrep
+          pkgs.lazygit
+
+          # The package
           (nixvim.legacyPackages.${ pkgs.stdenv.hostPlatform.system }.makeNixvimWithModule {
             inherit (pkgs) system;
             module = [
