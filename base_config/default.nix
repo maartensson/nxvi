@@ -44,7 +44,40 @@
 
   opts.completeopt = ["menu" "menuone" "noselect"];
 
+
+  colorschemes = {
+    catppuccin = {
+      enable = true;
+      settings = {
+        dark = "mocha";
+        light = "latte";
+      };
+    };
+  };
+
   extraConfigLua = ''
     require("aerial").setup({})
+  '';
+
+  extraConfigLuaPre = ''
+    local handle = io.popen([[
+      gdbus call \
+        --session \
+        --dest org.freedesktop.portal.Desktop \
+        --object-path /org/freedesktop/portal/desktop \
+        --method org.freedesktop.portal.Settings.Read \
+        org.freedesktop.appearance color-scheme
+    ]])
+
+    if handle then
+      local result = handle:read("*a")
+      handle:close()
+
+      if result:match("uint32 2") then
+        vim.o.background = "light"
+      else
+        vim.o.background = "dark"
+      end
+    end
   '';
 }
