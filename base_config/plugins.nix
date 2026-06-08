@@ -30,13 +30,8 @@
 
   # Top bar showing open buffers
   # https://github.com/romgrk/barbar.nvim/
-  barbar = {
+  bufferline = {
     enable = true;
-    keymaps = {
-      next.key = "<TAB>";
-      previous.key = "<S-TAB>";
-      close.key = "<C-w>";
-    };
   };
 
   web-devicons.enable = true;
