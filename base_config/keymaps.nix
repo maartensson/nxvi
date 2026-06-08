@@ -40,7 +40,15 @@
   }
   {
     key = "<leader>x";
-    action = ":BufferClose<CR>";
+    action = ":bd<CR>";
+  }
+  {
+    key = "<TAB>";
+    action = ":bn<CR>";
+  }
+  {
+    key = "<S-TAB>";
+    action = ":bp<CR>";
   }
   {
     key = "<leader>p";
