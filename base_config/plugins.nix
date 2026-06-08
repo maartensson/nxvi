@@ -32,6 +32,25 @@
   # https://github.com/romgrk/barbar.nvim/
   bufferline = {
     enable = true;
+    settings = {
+      options = {
+        always_show_bufferline = true;
+        diagnostics = "nvim_lsp";
+        diagnostics_indicator = ''
+          function(count, level, diagnostics_dict, context)
+            local s = ""
+            for e, n in pairs(diagnostics_dict) do
+              local sym = e == "error" and " "
+                or (e == "warning" and " " or "" )
+              if(sym ~= "") then
+                s = s .. " " .. n .. sym
+              end
+            end
+            return s
+          end
+        '';
+      };
+    };
   };
 
   web-devicons.enable = true;
@@ -73,7 +92,7 @@
   };
 
   # folding
-  origami.enable = true;
+  #origami.enable = true;
 
   treesitter = {
     enable = true;
