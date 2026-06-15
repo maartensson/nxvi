@@ -1,4 +1,4 @@
-{ config, ... } : {
+{ pkgs, config, ... } : {
   typescript-tools.enable = true;
   vim-css-color.enable = true;
 
@@ -8,7 +8,10 @@
       htmx.enable = true;
       cssls.enable = true;
       ts_ls.enable = true;
-      css_variables.enable = true;
+      css_variables = {
+        enable = true;
+        package = pkgs.css-variables-language-server;
+      };
     };
   };
 

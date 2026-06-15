@@ -1,4 +1,4 @@
-{ config, ... } : 
+{ pkgs, config, ... } : 
 {
-  plugins = import ./plugins.nix { inherit config; }; 
+  plugins = import ./plugins.nix { inherit config pkgs; }; 
 }
