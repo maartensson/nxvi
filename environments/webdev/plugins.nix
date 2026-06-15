@@ -15,7 +15,5 @@
   treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
       html
       css
-      javascript
-      typescript
   ];
 }
