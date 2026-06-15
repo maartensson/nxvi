@@ -1,4 +1,4 @@
-{ pkgs } : {
+{ config, ... } : {
   #rustaceanvim.enable = true;
   lsp = {
     enable = true;
@@ -25,7 +25,7 @@
     };
   };
 
-  treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+  treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
     rust
   ];
 }

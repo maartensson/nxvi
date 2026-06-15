@@ -1,4 +1,4 @@
-{ pkgs, ... } : {
+{ config, ... } : {
   typescript-tools.enable = true;
   vim-css-colors.enable = true;
 
@@ -12,7 +12,8 @@
     };
   };
 
-  treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+
+  treesitter.grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
       html
       css
   ];
