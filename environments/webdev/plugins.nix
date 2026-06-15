@@ -1,6 +1,6 @@
 { config, ... } : {
   typescript-tools.enable = true;
-  vim-css-colors.enable = true;
+  vim-css-color.enable = true;
 
   lsp = {
     servers = {
