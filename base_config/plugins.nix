@@ -114,6 +114,8 @@
       toml
       xml
       yaml
+      html
+      css
     ];
   };
 
