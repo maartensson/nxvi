@@ -1,3 +1,4 @@
+{ config, ... } : 
 {
-  plugins = import ./plugins.nix;
+  plugins = import ./plugins.nix { inherit config; }; 
 }

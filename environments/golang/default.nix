@@ -1,5 +1,6 @@
-{ pkgs, ... } : {
-  plugins = import ./plugins.nix { inherit pkgs; };
+{ pkgs, config, ... } : 
+{
+  plugins = import ./plugins.nix { inherit config; };
 
   extraPlugins = with pkgs.vimPlugins; [ 
     vim-go 
