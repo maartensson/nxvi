@@ -19,7 +19,7 @@
   opts = {
     updatetime = 100;
 
-    conceallevel=2;
+    conceallevel=0;
     concealcursor="nc";
 
     incsearch = true;
